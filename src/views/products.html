@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio: CAPC-PT-0024</title>
+
+    <link rel="stylesheet" href="../assets/views/products.css">
+    <link rel="icon" href="../assets/images/icon-softexpert-site.png" type="image/x-icon">
+</head>
+
+<body>
+    <header class="page-header" id="page-header-inside-src"></header>
+    <script src="../components/Header.js"></script>
+
+    <div class="site-body">
+        <div class="left-side-panel">
+            <form action="" id="input-form">
+                <div class="inputs">
+                    <input type="text" id="product_name" placeholder="Product Name" minlength="3" maxlength="30"
+                        pattern="[a-zà-úA-ZÀ-Ú]+([ a-zà-úA-ZÀ-Ú]+)?([ 0-9]+)?" required title="Nome do produto" />
+
+                    <input type="number" id="amount" placeholder="Amount" min="1" required pattern="[^0][0-9]+"
+                        title="Quantidade de itens" inputmode="numeric" />
+                    <input type="number" id="unit_price" placeholder="Unit price" min="0" step="0.01" required
+                        pattern="([0-9]*)\.?([0-9]{1,2})?" title="Preço unitário" inputmode="numeric" />
+                </div>
+                <label for="category-selection" style="padding-left: 0.5rem;">Category</label>
+                <select id="category-selection" name="category-selection">
+                </select>
+                <input type="submit" id="submit-btn" class="primary-bg" value="Add Product">
+            </form>
+        </div>
+
+        <div class="middle-divisor"></div>
+
+        <div class="right-side-panel">
+            <table id="products-table">
+                <tr>
+                    <td>#</td>
+                    <td>Product</td>
+                    <td>Amount</td>
+                    <td>Price (&dollar;)</td>
+                    <td>Category</td>
+                    <td>Action</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="../utils/index.js"></script>
+    <script src="../services/categories.js"></script>
+    <script src="../services/order_item.js"></script>
+    <script src="../services/products.js"></script>
+    <script src="../js/products.js"></script>
+</body>
+
+</html>

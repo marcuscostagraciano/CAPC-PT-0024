@@ -1,0 +1,20 @@
+@import url("../page-head.css");
+
+.inputs {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.2em 0;
+
+    input {
+        border: 0.1rem solid var(--SECONDARY-COLOR);
+
+        &:first-of-type {
+            width: 75%;
+        }
+
+        &:not(:first-of-type) {
+            width: 25%;
+        }
+    }
+}

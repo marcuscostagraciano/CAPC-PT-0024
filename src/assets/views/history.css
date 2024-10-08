@@ -1,0 +1,108 @@
+@import url("../page-head.css");
+
+.site-body {
+    display: flex;
+    justify-content: center;
+
+    &>table {
+        width: 50%;
+        max-height: 2rem;
+        border-collapse: collapse !important;
+
+        @media (width<1024px) {
+            width: 90%;
+        }
+
+        tr {
+
+            &:first-of-type {
+                font-weight: bold;
+            }
+
+            td {
+                &:first-child {
+                    width: 30%;
+                }
+            }
+
+            &:not(:first-of-type) td:last-of-type {
+                button {
+                    display: block;
+                    margin: auto;
+                    width: 50%;
+                }
+            }
+        }
+
+        td:not(:last-of-type) {
+            border-right: solid var(--TERTIARY-COLOR);
+        }
+
+        tr:not(:last-of-type) td {
+            border-bottom: solid var(--TERTIARY-COLOR);
+        }
+    }
+}
+
+
+#history-info {
+    position: absolute;
+    z-index: 1;
+    background-color: var(--TERTIARY-COLOR);
+    border: solid var(--SECONDARY-COLOR);
+    width: fit-content;
+
+    button {
+        display: flex;
+        justify-content: center;
+        border: solid var(--SECONDARY-COLOR);
+        width: 90%;
+        margin-bottom: 1rem;
+
+        &:hover {
+            background-color: var(--PRIMARY-COLOR);
+            color: var(--TERTIARY-COLOR);
+        }
+    }
+}
+
+#purchase-dialog {
+    margin: 1rem;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+
+    div {
+        border: solid var(--SECONDARY-COLOR) 0.15rem;
+        padding: 0.5rem;
+    }
+
+    #left-side-panel {
+        grid-column: 1;
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    #right-side-panel {
+        grid-column: 2 / -1;
+        display: flex;
+        flex-direction: column;
+
+        #products-listing {
+            padding: 0.5rem 0;
+            max-height: 190px;
+            overflow-y: auto;
+        }
+    }
+}
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

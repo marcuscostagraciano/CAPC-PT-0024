@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio: CAPC-PT-0024</title>
+
+    <link rel="stylesheet" href="../assets/views/history.css">
+    <link rel="icon" href="../assets/images/icon-softexpert-site.png" type="image/x-icon">
+</head>
+
+<body>
+    <header class="page-header" id="page-header-inside-src"></header>
+    <script src="../components/Header.js"></script>
+
+    <div class="site-body">
+
+        <table id="history-table">
+            <tr>
+                <td>Cod</td>
+                <td>Tax (&dollar;)</td>
+                <td>Total (&dollar;)</td>
+                <td>Action</td>
+            </tr>
+        </table>
+
+        <div id="history-info" class="invisible">
+            <div id="purchase-dialog">
+                <!-- <div id="left-side-panel"></div>
+                <div id="right-side-panel">
+                    <div id="products-listing"></div>
+                </div>
+                </div> -->
+
+                <div id="left-side-panel">
+                    <div>
+                        History Code:
+                        <p id="order-id"></p>
+                    </div>
+                    <div>
+                        Tax payed:
+                        <p id="order-tax"></p>
+                    </div>
+                    <div>
+                        Total payed:
+                        <p id="order-total"></p>
+                    </div>
+                    <div>
+                        Item quantity:
+                        <p id="products-qty"></p>
+                    </div>
+                </div>
+                <div id="right-side-panel">
+                    <div>Products in list:</div>
+                    <div id="products-listing"></div>
+                </div>
+            </div>
+
+            <button onclick="hidePurchaseDialog()">Hide history view</button>
+        </div>
+
+    </div>
+
+    <script src="../utils/index.js"></script>
+    <script src="../services/orders.js"></script>
+    <script src="../services/order_item.js"></script>
+    <script src="../services/products.js"></script>
+    <script src="../js/history.js"></script>
+</body>
+
+</html>

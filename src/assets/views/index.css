@@ -1,0 +1,55 @@
+@import url("../page-head.css");
+
+
+.left-side-panel {
+    .inputs {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 0.2em 0;
+
+        input {
+            border: 0.1rem solid var(--SECONDARY-COLOR);
+
+            &:first-of-type {
+                width: calc(100% / 2);
+            }
+
+            &:not(:first-of-type) {
+                width: calc(90% / 4);
+            }
+        }
+    }
+}
+
+.right-side-panel {
+    .bottom-side-table {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        table {
+            height: 20%;
+            grid-column: 3;
+            grid-row: 1;
+
+            td:first-of-type {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .cancel-finish-button {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+
+        button {
+            /* Valores obtidos através do empirismo */
+            min-width: 40%;
+            height: 1.5rem;
+        }
+    }
+}

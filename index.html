@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio: CAPC-PT-0024</title>
+
+    <link rel="stylesheet" href="src/assets/views/index.css">
+    <link rel="icon" href="src/assets/images/icon-softexpert-site.png" type="image/x-icon">
+
+    <style>
+        .finished-task {
+            text-decoration: line-through;
+            opacity: .3;
+        }
+
+        .backlog-task {
+            text-decoration: line-through;
+            opacity: .3;
+            color: darkred;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="page-header" id="page-header"></header>
+    <script src="src/components/Header.js"></script>
+
+    <div class="site-body">
+        <div class="left-side-panel">
+            <form action="" id="input-form">
+                <label for="product-selection" style="padding-left: 0.5rem;">Product</label>
+                <select name="" id="product-selection" name="product-selection" class="tertiary-bg" required>
+                    <!-- <option value="0" disabled selected>Product list</option> -->
+                </select>
+                <div class="inputs">
+                    <input type="number" name="amount_input" id="amount_input" placeholder="Amount" class="tertiary-bg"
+                        required min="1" max="0" pattern="[^0][0-9]+" inputmode="numeric" />
+                    <input type="number" name="tax_input" id="tax_input" placeholder="Tax" class="tertiary-bg" disabled
+                        title="Taxa sobre o produto" />
+                    <input type="number" name="price_input" id="price_input" placeholder="Price" class="tertiary-bg"
+                        disabled title="Preço unitário" />
+                </div>
+
+                <input type="submit" class="primary-bg" value="Add Product" id="submit-btn">
+            </form>
+        </div>
+
+        <div class="middle-divisor"></div>
+
+        <div class="right-side-panel">
+            <table id="products-cart-table">
+                <tr>
+                    <td>Product</td>
+                    <td>Amount</td>
+                    <td>Price (&dollar;)</td>
+                    <td>Total (&dollar;)</td>
+                    <td>Action</td>
+                </tr>
+            </table>
+
+            <div class="bottom-side-table">
+                <table>
+                    <tr>
+                        <td>Tax (&dollar;)</td>
+                        <td id="tax_td"></td>
+                    </tr>
+                    <tr>
+                        <td>Total (&dollar;)</td>
+                        <td id="total_td"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="cancel-finish-button">
+                <button class="secondary-bg" onclick="cancelSale()" id="cancel_sale_btn" disabled>Cancel
+                    purchase</button>
+                <button class="primary-bg" onclick="finishSale()" id="finish_sale_btn" disabled>Finish
+                    purchase</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="src/utils/index.js"></script>
+    <script src="src/services/categories.js"></script>
+    <script src="src/services/products.js"></script>
+    <!-- Cuida das compras (histórico) -->
+    <script src="src/services/orders.js"></script>
+    <!-- Cuida do relacionamento entre produtos e compras (carrinho) -->
+    <script src="src/services/order_item.js"></script>
+    <script src="src/js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+@import url('base.css');
+
+.page-header {
+    --H1-END: 3;
+    --UL-COLUMN-ENDING: 9;
+    grid-column: 1 / -1;
+    background-color: var(--PRIMARY-COLOR);
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+
+    @media (width <=768px) {
+        background-color: var(--PRIMARY-COLOR);
+        --H1-END: 5;
+        --UL-COLUMN-ENDING: -1;
+    }
+
+    @media (768px < width <=1024px) {
+        --H1-END: 4;
+    }
+
+    h1 {
+        grid-column: 1 / var(--H1-END);
+    }
+
+    ul {
+        grid-column: var(--H1-END) / var(--UL-COLUMN-ENDING);
+        list-style-type: none;
+
+        display: flex;
+        justify-content: space-around;
+        font-weight: bolder;
+    }
+}
