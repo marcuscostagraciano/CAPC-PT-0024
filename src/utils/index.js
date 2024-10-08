@@ -51,7 +51,7 @@ const insertItemsToTable = (table, ...row_fields) => {
         cell.textContent = `${value}`;
 
         if (index == row_fields.length - 1) {
-            cell.innerHTML = `<i class="bi bi-trash-fill" onclick='removeItemBasedOnId(${value})'></i>`;
+            cell.innerHTML = `<i class="bi bi-trash-fill delete-btn" onclick='removeItemBasedOnId(${value})'></i>`;
         }
     });
 };

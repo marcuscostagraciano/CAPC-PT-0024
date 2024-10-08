@@ -19,6 +19,7 @@ body {
     --PRIMARY-COLOR: #6a65fe;
     --SECONDARY-COLOR: #c5c5c5;
     --TERTIARY-COLOR: #f4f4f4;
+    --DELETE-HOVER: #e92222;
 }
 
 a {
@@ -204,6 +205,10 @@ button {
                 &:last-of-type {
                     width: 20px;
                     text-align: center;
+
+                    & :hover {
+                        color: var(--DELETE-HOVER);
+                    }
                 }
 
             }
