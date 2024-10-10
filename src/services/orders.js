@@ -10,3 +10,12 @@ const postOrder = async (total = 0, tax = 0) => {
         .then((e) => e.json());
     return response;
 };
+
+const putOrder = async (id, total, tax) => {
+    const response = await fetch(`http://localhost/orders/${id}`, {
+        method: "PUT",
+        body: JSON.stringify({ total, tax }),
+    })
+        .then((e) => e.json());
+    return response;
+};

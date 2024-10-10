@@ -7,7 +7,7 @@ const postOrderItem = async (order_code, product_code, amount) => {
     const response = fetch("http://localhost/order_item", {
         method: "POST",
         body: JSON.stringify({ order_code, product_code, amount }),
-    });
+    }).then(e => e.json());
 
     return response;
 };

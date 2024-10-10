@@ -20,12 +20,12 @@ const deleteProduct = async (id) => {
         .then((e) => e);
 };
 
-// const patchProduct = async (id, amount, price) => {
-//     const response = await fetch(`http://localhost/products/${id}`, {
-//         method: "PATCH",
-//         body: JSON.stringify({ amount, price }),
-//     })
-//         .then((e) => e.json())
-//         .then((e) => e);
-//     return response;
-// };
+const patchProduct = async (id, amount, price) => {
+    const response = await fetch(`http://localhost/products/${id}`, {
+        method: "PATCH",
+        body: JSON.stringify({ amount }),
+    })
+        .then((e) => e.json())
+        .then((e) => e);
+    return response;
+};

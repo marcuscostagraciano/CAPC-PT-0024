@@ -107,7 +107,7 @@ const addItemFromInputs = () => {
         // Snapshot do carrinho
         productsCart.item_qty += amount;
         productsCart.tax += total_tax;
-        productsCart.value += total_price;
+        productsCart.value += total_price + total_tax;
         productsCart.items.push({ ...last_added_product, amount: amount });
         setItemToLocalStorage("products_cart", productsCart);
 
@@ -171,8 +171,13 @@ const cancelSale = () => {
 
 const postOrderItemFromTheCart = async (orderCode, items) => {
     const postPromises = items.map(
-        async (product) =>
-            await postOrderItem(orderCode, product.code, product.amount)
+        async (product) => {
+            const orderItemInfo = await postOrderItem(orderCode, product.code, product.amount);
+            const totalPriceOfOrderItem = orderItemInfo.price + orderItemInfo.tax;
+
+            await putOrder(orderCode, totalPriceOfOrderItem, orderItemInfo.tax);
+            await patchProduct(product.code, product.amount);
+        }
     );
 
     Promise.all(postPromises).then(async () => {
